@@ -1,0 +1,45 @@
+* { margin: 0; box-sizing: border-box; font-family: sans-serif; }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+}
+
+.timer { 
+    display: flex;
+    gap: 15px; 
+    margin: 30px 0; 
+}
+
+.timer div {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 90px;
+}
+
+.timer span { 
+    font-size: 36px; 
+    font-weight: bold; 
+    display: block; 
+}
+
+.timer p { 
+    font-size: 12px; 
+    opacity: 0.8; 
+    margin-top: 5px; }
+
+.buttons button {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 0 5px;
+}
