@@ -9,7 +9,6 @@ function updateUI() {
     document.getElementById("mins").textContent = String(m).padStart(2, "0");
     document.getElementById("secs").textContent = String(s).padStart(2, "0");
 }
-
 // Tombol Start / Stop 
 document.getElementById("btnStart").onclick = function() {
     if (timer) {
@@ -24,8 +23,7 @@ document.getElementById("btnStart").onclick = function() {
         }, 1000);
         this.textContent = "Stop";
     }
-};
-
+}
 // Tombol Reset
 document.getElementById("btnReset").onclick = function() {
     clearInterval(timer);
@@ -33,4 +31,4 @@ document.getElementById("btnReset").onclick = function() {
     totalSecs = 86400;
     updateUI();
     document.getElementById("btnStart").textContent = "Start";
-};
+}
