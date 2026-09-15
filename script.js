@@ -1,4 +1,4 @@
-let totalSecs = 86400; // 24 hours x 60 x 60
+let totalSecs = 86400; // 24 jam x 60 x 60
 let timer = null; // penanda status jalan/stop
 
 function updateUI() {
@@ -9,7 +9,7 @@ function updateUI() {
     document.getElementById("mins").textContent = String(m).padStart(2, "0");
     document.getElementById("secs").textContent = String(s).padStart(2, "0");
 }
-// Tombol Start / Stop 
+// tombol start / stop 
 document.getElementById("btnStart").onclick = function() {
     if (timer) {
         clearInterval(timer);
@@ -24,7 +24,7 @@ document.getElementById("btnStart").onclick = function() {
         this.textContent = "Stop";
     }
 }
-// Tombol Reset
+// tombol reset
 document.getElementById("btnReset").onclick = function() {
     clearInterval(timer);
     timer = null;
