@@ -1,29 +1,26 @@
-let totalDetik = 86400; // 24 jam x 60 x 60
-let timer = null; // Menyimpan ID interval (sekaligus penanda status jalan/stop)
+let totalSecs = 86400; // 24 hours x 60 x 60
+let timer = null; // penanda status jalan/stop
 
 function updateUI() {
-    const h = Math.floor(totalDetik / 3600);
-    const m = Math.floor((totalDetik % 3600) / 60);
-    const s = totalDetik % 60;
-
-    document.getElementById("jam").textContent = String(h).padStart(2, "0");
-    document.getElementById("menit").textContent = String(m).padStart(2, "0");
-    document.getElementById("detik").textContent = String(s).padStart(2, "0");
+    const h = Math.floor(totalSecs / 3600);
+    const m = Math.floor((totalSecs % 3600) / 60);
+    const s = totalSecs % 60;
+    document.getElementById("hours").textContent = String(h).padStart(2, "0");
+    document.getElementById("mins").textContent = String(m).padStart(2, "0");
+    document.getElementById("secs").textContent = String(s).padStart(2, "0");
 }
 
-// Tombol Start / Stop (Toggle)
+// Tombol Start / Stop 
 document.getElementById("btnStart").onclick = function() {
     if (timer) {
-        // Jika timer sedang jalan -> Pause
         clearInterval(timer);
         timer = null;
         this.textContent = "Start";
     } else {
-        // Jika timer mati -> Start
         timer = setInterval(() => {
-            totalDetik--;
+            totalSecs--;
             updateUI();
-            if (totalDetik <= 0) clearInterval(timer);
+            if (totalSecs <= 0) clearInterval(timer);
         }, 1000);
         this.textContent = "Stop";
     }
@@ -33,7 +30,7 @@ document.getElementById("btnStart").onclick = function() {
 document.getElementById("btnReset").onclick = function() {
     clearInterval(timer);
     timer = null;
-    totalDetik = 86400;
+    totalSecs = 86400;
     updateUI();
     document.getElementById("btnStart").textContent = "Start";
 };

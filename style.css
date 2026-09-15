@@ -1,13 +1,17 @@
-* { margin: 0; box-sizing: border-box; font-family: sans-serif; }
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     background: #1a1a1a;
     color: white;
     text-align: center;
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+.h1{
+    margin-top: 30%;
 }
 
 .timer { 
@@ -23,13 +27,13 @@ body {
     min-width: 90px;
 }
 
-.timer span { 
+.timer span{ 
     font-size: 36px; 
     font-weight: bold; 
     display: block; 
 }
 
-.timer p { 
+.timer p{ 
     font-size: 12px; 
     opacity: 0.8; 
     margin-top: 5px; }
@@ -42,4 +46,14 @@ body {
     border-radius: 6px;
     cursor: pointer;
     margin: 0 5px;
+}
+
+footer {
+  position: fixed;   /* bikin footer nempel */
+  bottom: 0;         /* posisinya di bawah */
+  left: 0;           /* mulai dari sisi kiri */
+  width: 100%;       /* lebar penuh layar */
+  background: #333;
+  text-align: center;
+  padding: 5px;
 }
